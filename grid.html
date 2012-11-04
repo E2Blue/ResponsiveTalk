@@ -59,7 +59,7 @@
 				<div class="span10">
 					<div class="tile bg-orange" style="background-image:url('./images/container.png');"></div>
 					<h3 id="container">Container baserad</h3>
-					<p class="blue">Total bredd = (colwidth + gutterwidth) * #cols.</p>
+					<p class="blue">Totalbredd = (colwidth + gutterwidth) * #cols.</p>
 					<p class="green">Semantisk.</p>
 					<p class="green">Extremt flexibel utan onödig markup.</p>
 					<p class="red">Kan inte nästla containers i spans (kräver väldigt bökig css).</p>
@@ -67,11 +67,20 @@
 				<div class="span10">
 					<div class="tile bg-purple" style="background-image:url('./images/row.png');"></div>
 					<h3 id="row">Row baserad</h3>
-					<p class="blue">Total bredd = colwidth * #cols + gutterwidth * (#cols -1).</p>
+					<p class="blue">Totalbredd = colwidth * #cols + gutterwidth * (#cols -1).</p>
 					<p class="green">Tillåter oändlig nästling.</p>
 					<p class="red">Mycket markup för annat än simpla layouter.</p>
 					<p class="red">Diskutabel semantik.</p>
 				</div>
+				<div class="span20">
+					<h3>Flytande grid</h3>
+					<p class="blue">Anpassar sig alltid till föräldern.</p>
+					<p class="blue">Väldigt lik container griden.</p>
+					<p class="green">Perfekt för webbappar.</p>
+					<p class="green">Kan nästlas hur långt som helst.</p>
+					<p class="red">Kan vara svårt att förutse layouten.</p>
+					<p class="red">Komplexa layouter blir lätt ett vertikalt virrvarr.</p>
+					<p class="red">Inte helt simpel att räkna ut.</p>
 			</div>
 			<div class="span20">
 				<div class="tile bg-lime code"></div>
@@ -142,15 +151,90 @@
 	&lt/div&gt
 &lt/div&gt
 				</pre>
+				<h3>Flytande</h3>
+				<h4>CSS:</h4>
+				<pre class="prettyprint">
+.container {width:960px; margin:0 auto;}
+
+.span24,.span16,.span4 {margin:1%;min-height:1px;float:left;}
+
+.container > .span24 {width:98.0%;}
+.container > .span16 {width:64.667%;}
+.container > .span4 {width:14.667%;}
+				</pre>
+				<h4>HTML:</h4>
+				<pre class="prettyprint">
+&ltdiv class="container"&gt
+	&ltdiv class="span24" id="nav"&gt
+	&lt/div&gt
+	&ltdiv class="span24" id="hero"&gt
+	&lt/div&gt
+	&ltdiv class="span4" id="leftcolumn"&gt
+	&lt/div&gt
+	&ltdiv class="span16" id="content"&gt
+	&lt/div&gt
+	&ltdiv class="span4" id="rightcolumn"&gt
+	&lt/div&gt
+	&ltdiv class="span24" id="footer"&gt
+	&lt/div&gt
+&lt/div&gt
+				</pre>
 			</div>
 			<div class="span20">
 				<h2 id="responsiv">Responsiv grid</h2>
 				<p class="blue">Antalet kolumner ändras aldrig.</p>
 				<p class="blue">Inga media-queries för att uppnå desktop layout.</p>
-				<p class="blue">1200 large.</p>
+				<p class="blue"> &gt 1200 large.</p>
 				<p class="blue">768 - 979 tablet.</p>
 				<p class="blue"> &lt= 767 horizontell telefon, edge case.</p>
 				<p class="blue"> &lt= 479 telefon. </p>
+				<h3>Hur?</h3>
+				<p class="blue">Bestäm nya storlekar för gutter och kolumner.</p>
+				<p class="blue">Tänk på totalbredden.</p>
+				<p class="blue">Vilka special element ska ändras vid vissa storlekar?</p>
+				<p class="blue">Tänk på selektorer och kombinatorer.</p>
+				<h3>Kod</h3>
+				<h4>Large</h4>
+				<p>En kolumn är nu 26px med en gutter 24px</p>
+				<pre class="prettyprint">
+@media (min-width:1200px)
+{
+	.container {width:1200px;}
+
+	.span24,.span16,.span4 {margin:5px 12px;}
+
+	.container > .span24{width:1176px;}
+	.container > .span16{width:776px;}
+	.container > .span4{width:176px;}
+}
+				</pre>
+				<h4>Tablet</h4>
+				<p>En kolumn är nu 20px med en gutter 12px</p>
+				<pre class="prettyprint">
+@media (min-width:768px) and (max-width: 979px)
+{
+	.container {width:756px;}
+
+	.span24,.span16,.span4 {margin:5px 6px;}
+
+	.container > .span24{width:756px;}
+	.container > .span16{width:500px;}
+	.container > .span4{width:116px;}
+}
+				</pre>
+				<h4>Flytande</h4>
+				<p>Alla kolumner är nu flytande, kan finnas specialbehov.</p>
+				<pre class="prettyprint">
+@media (max-width:767px)
+{
+	body {padding:0 12px;}
+
+	.container,
+	.container > .span24,
+	.container > .span16,
+	.container > .span4{width:100%;float:none;margin:0;}
+}
+				</pre>
 			</div>
 			<div class="span20">
 				<h2 id="transform">Transforming spans</h2>
