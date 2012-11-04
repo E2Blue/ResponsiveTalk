@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Responsiv web</title>
+	<link rel="stylesheet" type="text/css" href="../metrowebui/styles/metro.css"></link>
+	<link rel="stylesheet" type="text/css" href="../metrowebui/styles/metro-imaging.css"></link>
+	<link rel="stylesheet" type="text/css" href="../metrowebui/styles/metro-responsive.css"></link>
+	<link rel="stylesheet" type="text/css" href="../metrowebui/styles/metro-colors.css"></link>
+	<style>
+		.green:before {content: "+ ";}
+		.red:before {content: "- ";}
+		.blue:before {content: "* ";}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="container span24">
+			<h1 class="span20 pre4">Grid</h1>			
+		</div>
+		<div class="container span4">
+		<ul class="span4">
+			<li>
+				<a href="#container">Container grid</a>
+			</li>
+			<li>
+				<a href="#row">Row grid</a>
+			</li>
+			<li>
+				<a href="#responsiv">Responsiv</a>
+			</li>
+			<li>
+				<a href="#transform">Transforming spans</a>
+			</li>
+		</ul>
+		</div>
+		<div class="container span20">
+			<div class="span10">
+				<h3>Varför?</h3>
+				<p class="blue">Enklare att strukturera layout.</p>
+				<p class="blue">Enhetligt utseende.</p>
+				<p class="blue">Kompakt, redundansfri och strukturerad css.</p>
+				<p class="blue">Semantik.</p>
+			</div>
+			<div class="span10">
+				<h3>Hur?</h3>
+				<p class="blue">Definiera upp antal kolumner, bredden av en kolumn och bredden för rännstenen.</p>
+				<p class="blue">Element delas upp till att täcka ett visst antal kolumner</p>
+				<p class="blue">Standardbredd för ett system är 940/960px, målgruppsberoende.</p> 
+				<p class="blue">Vanligast med 12,16 eller 24 kolumner i ett grid system.</p>
+				<p class="blue">Definiera bara de kolumner du ska använda, men planera för fler.</p>
+			</div>
+			<div class="container span20">
+				<h2 class="span20">Typer av gridar.</h2>
+				<div class="span10">
+					<h3 id="container">Container baserad</h3>
+					<p class="blue">Total bredd = (colwidth + gutterwidth) * #cols.</p>
+					<p class="green">Semantisk.</p>
+					<p class="green">Extremt flexibel utan onödig markup.</p>
+					<p class="red">Kan inte nästla containers i spans (kräver väldigt bökig css).</p>
+				</div>
+				<div class="span10">
+					<h3 id="row">Row baserad</h3>
+					<p class="blue">Total bredd = colwidth * #cols + gutterwidth * (#cols -1).</p>
+					<p class="green">Tillåter oändlig nästling.</p>
+					<p class="red">Mycket markup för annat än simpla layouter.</p>
+					<p class="red">Diskutabel semantik.</p>
+				</div>
+			</div>
+			<div class="span20">
+				<h2 id="responsiv">Responsiv grid</h2>
+				<p class="blue">Antalet kolumner ändras aldrig.</p>
+				<p class="blue">Inga media-queries för att uppnå desktop layout.</p>
+				<p class="blue">1200 large.</p>
+				<p class="blue">768 - 979 tablet.</p>
+				<p class="blue"> &lt= 767 horizontell telefon, edge case.</p>
+				<p class="blue"> &lt= 479 telefon. </p>
+			</div>
+			<div class="span20">
+				<h2 id="transform">Transforming spans</h2>
+			</div>
+		</div>
+	</div>
+</body>
