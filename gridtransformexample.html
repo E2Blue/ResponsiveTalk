@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Responsiv web</title>
+	<link rel="stylesheet" type="text/css" href="../metrowebui/styles/metro.css"></link>
+	<link rel="stylesheet" type="text/css" href="../metrowebui/styles/metro-responsive.css"></link>
+	<link rel="stylesheet" type="text/css" href="../metrowebui/styles/metro-colors.css"></link>
+	<link rel="stylesheet" type="text/css" href="./style/prettify.css"></link>
+</head>
+<body onload="prettyPrint()">
+	<div class="container">
+		<div class="span24">
+			<div class="navbar">
+				<a class="item" href="./grid.html">Grid</a>
+				<a class="item" href="./imaging.html">Bilder</a>
+				<a class="item active" href="./gridexample.html">Grid exempel</a>
+				<a class="item" href="./gridtransformexample.html">Transform exempel</a>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<div class="span24 bg-blue" style="height:250px;position:relative;"><h1 style="color:white;position:absolute;left:20px; top:150px;">En ganska normal layout!</h1></div>
+		<div class="span4">
+			<h3>Meny</h3>
+			<ul>
+				<li>Menyval 1</li>
+				<li>Menyval 2</li>
+				<li>Menyval 3</li>
+				<li>Menyval 4</li>
+			</ul>
+		</div>
+		<div class="container span20">
+			<div class="span4 span20-tablet right">
+				<h4>Sido info 1 (över)</h4>
+				<p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."</p>
+			</div>
+			<div class="span16  span20-tablet">
+				<h2>CSSen för denna sidan</h2>
+				<pre class="prettyprint">
+.container.span20 {
+	width: 800px;
+}
+
+@media (min-width:1200px)
+{
+	.container.span20 {
+		width: 1000px;
+	}
+}
+
+@media (min-width:768px) and (max-width: 979px)
+{
+	.container.span20 {
+		width: 640px;
+	}
+	.container > .span20-tablet {
+		width: 628px;
+	}
+}
+
+				</pre>
+				<h2>HTML för denna sidan</h2>
+				<pre class="prettyprint">
+	&ltdiv class="container"&gt
+		&ltdiv class="span24" id="nav"&gt
+		&lt/div&gt
+		&ltdiv class="span24" id="hero"&gt
+		&lt/div&gt
+		&ltdiv class="span4" id="leftcolumn"&gt
+		&lt/div&gt
+		&ltdiv class="container span20"&gt
+			&ltdiv class="span4 span20-tablet right" id="rightcolumn1"&gt
+			&lt/div&gt
+			&ltdiv class="span16 span20-tablet" id="content"&gt
+			&lt/div&gt
+			&ltdiv class="span4 span20-tablet" id="rightcolumn2"&gt
+			&lt/div&gt
+		&ltdiv&gt
+		&ltdiv class="span24" id="footer"&gt
+		&lt/div&gt
+	&lt/div&gt
+				</pre>
+			</div>
+			<div class="span4 span20-tablet">
+				<h4>Sido info 2 (under)</h4>
+				<p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."</p>
+			</div>
+		</div>
+		<div class="span24" style="background:#ddd;height:160px;text-align:center;">Stoppa in en sitemap här?</div>
+	</div>
+	<script type="text/javascript" src="./script/prettify.js"></script>
+</body>
+</html>

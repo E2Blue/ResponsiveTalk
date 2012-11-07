@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Responsiv web</title>
+	<link rel="stylesheet" type="text/css" href="../metrowebui/styles/metro.css"></link>
+	<link rel="stylesheet" type="text/css" href="../metrowebui/styles/metro-responsive.css"></link>
+	<link rel="stylesheet" type="text/css" href="../metrowebui/styles/metro-colors.css"></link>
+	<link rel="stylesheet" type="text/css" href="./style/prettify.css"></link>
+	<style>
+	.container {
+		width:960px;
+		margin:0 auto;
+	}
+
+	.span24,.span16,.span4 {
+		margin:5px 9px;
+		min-height:1px;
+		float:left;
+	}
+
+	.container > .span24 {width:942px;}
+	.container > .span16 {width:622px;}
+	.container > .span4 {width:142px;}
+
+		@media (min-width:1200px)
+		{
+			.container {width:1200px;}
+
+			.span24,.span16,.span4 {margin:5px 12px;}
+
+			.container > .span24{width:1176px;}
+			.container > .span16{width:776px;}
+			.container > .span4{width:176px;}
+		}
+
+		@media (min-width:768px) and (max-width: 979px)
+		{
+			.container {width:768px;}
+
+			.span24,.span16,.span4 {margin:5px 6px;}
+
+			.container > .span24{width:756px;}
+			.container > .span16{width:500px;}
+			.container > .span4{width:116px;}
+		}
+
+		@media (max-width:767px)
+		{
+			body {padding:0 12px;}
+
+			.container,
+			.container > .span24,
+			.container > .span16,
+			.container > .span4{width:100%;float:none;margin:0;}
+		}
+	</style>
+</head>
+<body onload="prettyPrint()">
+	<div class="container">
+		<div class="span24">
+			<div class="navbar">
+				<a class="item" href="./grid.html">Grid</a>
+				<a class="item" href="./imaging.html">Bilder</a>
+				<a class="item active" href="./gridexample.html">Grid exempel</a>
+				<a class="item" href="./gridtransformexample.html">Transform exempel</a>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<div class="span24 bg-blue" style="height:250px;position:relative;"><h1 style="color:white;position:absolute;left:20px; top:150px;">En ganska normal layout!</h1></div>
+		<div class="span4">
+			<h3>Meny</h3>
+			<ul>
+				<li>Menyval 1</li>
+				<li>Menyval 2</li>
+				<li>Menyval 3</li>
+				<li>Menyval 4</li>
+			</ul>
+		</div>
+		<div class="span16">
+			<h2>CSSen för denna sidan</h2>
+			<pre class="prettyprint">
+.container {width: 960px; margin: 0 auto;}
+
+.span24,.span16,.span4 {
+	margin:5px 0px 5px 18px;
+	min-height:1px;
+	float:left;
+}
+
+.row > .span24 {width:942px;}
+.row > .span16 {width:622px;}
+.row > .span4 {width:142px;}
+
+@media (min-width:1200px)
+{
+	.container {width:1200px;}
+
+	.span24,.span16,.span4 {margin:5px 12px;}
+
+	.container > .span24{width:1176px;}
+	.container > .span16{width:776px;}
+	.container > .span4{width:176px;}
+}
+
+@media (min-width:768px) and (max-width: 979px)
+{
+	.container {width:768px;}
+
+	.span24,.span16,.span4 {margin:5px 6px;}
+
+	.container > .span24{width:756px;}
+	.container > .span16{width:500px;}
+	.container > .span4{width:116px;}
+}
+
+@media (max-width:767px)
+{
+	body {padding:0 12px;}
+
+	.container,
+	.container > .span24,
+	.container > .span16,
+	.container > .span4{width:100%;float:none;margin:0;}
+}
+			</pre>
+			<h2>HTML för denna sidan</h2>
+			<pre class="prettyprint">
+&ltdiv class="container"&gt
+	&ltdiv class="span24" id="nav"&gt
+	&lt/div&gt
+	&ltdiv class="span24" id="hero"&gt
+	&lt/div&gt
+	&ltdiv class="span4" id="leftcolumn"&gt
+	&lt/div&gt
+	&ltdiv class="span16" id="content"&gt
+	&lt/div&gt
+	&ltdiv class="span4" id="rightcolumn"&gt
+	&lt/div&gt
+	&ltdiv class="span24" id="footer"&gt
+	&lt/div&gt
+&lt/div&gt
+			</pre>
+		</div>
+		<div class="span4">
+			<h4>Sido info</h4>
+			<p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+		</div>
+		<div class="span24" style="background:#ddd;height:160px;text-align:center;">Stoppa in en sitemap här?</div>
+	</div>
+	<script type="text/javascript" src="./script/prettify.js"></script>
+</body>
+</html>

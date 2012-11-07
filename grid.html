@@ -89,9 +89,16 @@
 				<h3>Container</h3>
 				<h4>CSS:</h4>
 				<pre class="prettyprint">
-.container {width:960px;margin:0 auto;}
+.container {
+	width:960px;
+	margin:0 auto;
+}
 
-.span24,.span16,.span4 {margin:5px 9px;min-height:1px;float:left;}
+.span24,.span16,.span4 {
+	margin:5px 9px;
+	min-height:1px;
+	float:left;
+}
 
 .container > .span24 {width:942px;}
 .container > .span16 {width:622px;}
@@ -121,7 +128,11 @@
 
 .row {width: 960px; margin-left: -18px;}
 
-.span24,.span16,.span4 {margin:5px 0px 5px 18px;min-height:1px;float:left;}
+.span24,.span16,.span4 {
+	margin:5px 0px 5px 18px;
+	min-height:1px;
+	float:left;
+}
 
 .row > .span24 {width:942px;}
 .row > .span16 {width:622px;}
@@ -156,7 +167,11 @@
 				<pre class="prettyprint">
 .container {width:960px; margin:0 auto;}
 
-.span24,.span16,.span4 {margin:1%;min-height:1px;float:left;}
+.span24,.span16,.span4 {
+	margin:1%;
+	min-height:1px;
+	float:left;
+}
 
 .container > .span24 {width:98.0%;}
 .container > .span16 {width:64.667%;}
@@ -186,16 +201,18 @@
 				<p class="blue">Inga media-queries för att uppnå desktop layout.</p>
 				<p class="blue"> &gt 1200 large.</p>
 				<p class="blue">768 - 979 tablet.</p>
-				<p class="blue"> &lt= 767 horizontell telefon, edge case.</p>
+				<p class="blue"> &lt= 767 landscape telefon till tablet, edge case.</p>
 				<p class="blue"> &lt= 479 telefon. </p>
 				<h3>Hur?</h3>
+				<pre class="prettyprint">&ltmeta name="viewport" content="width=device-width, initial-scale=1"&gt
+				</pre>
 				<p class="blue">Bestäm nya storlekar för gutter och kolumner.</p>
 				<p class="blue">Tänk på totalbredden.</p>
 				<p class="blue">Vilka special element ska ändras vid vissa storlekar?</p>
 				<p class="blue">Tänk på selektorer och kombinatorer.</p>
 				<h3>Kod</h3>
 				<h4>Large</h4>
-				<p>En kolumn är nu 26px med en gutter 24px</p>
+				<p>En kolumn är nu 26px med en gutter på 24px</p>
 				<pre class="prettyprint">
 @media (min-width:1200px)
 {
@@ -209,11 +226,11 @@
 }
 				</pre>
 				<h4>Tablet</h4>
-				<p>En kolumn är nu 20px med en gutter 12px</p>
+				<p>En kolumn är nu 20px med en gutter på 12px</p>
 				<pre class="prettyprint">
 @media (min-width:768px) and (max-width: 979px)
 {
-	.container {width:756px;}
+	.container {width:768px;}
 
 	.span24,.span16,.span4 {margin:5px 6px;}
 
