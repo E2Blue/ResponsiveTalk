@@ -12,6 +12,12 @@
 		.green:before {content: "+ ";}
 		.red:before {content: "- ";}
 		.blue:before {content: "* ";}
+
+		.imagedisplay{
+			background-repeat:no-repeat;
+			background-position:center top;
+			height:1160px;
+		}
 	</style>
 </head>
 <body  onload="prettyPrint()">
@@ -19,30 +25,51 @@
 		<div class="span24">
 			<div class="navbar">
 				<a class="item" href="./css.html">CSS</a>
-				<a class="item active" href="responsive.html">Responsive</a>
+				<a class="item" href="responsive.html">Responsive</a>
 				<a class="item" href="./grid.html">Grid</a>
-				<a class="item" href="./imaging.html">Bilder</a>
+				<a class="item active" href="./imaging.html">Bilder</a>
 				<a class="item" href="./gridexample.html">Grid exempel</a>
 				<a class="item" href="./gridtransformexample.html">Transform exempel</a>
 				<div class="clear"></div>
 			</div>
 		</div>
+		<div class="container span24">
+			<div class="tile span3 microsoft bg-purple"></div>
+			<div class="tile span3 twitter bg-blue"></div>
+			<div class="tile span3 github bg-green"></div>
+			<div class="tile span3 wp bg-orange"></div>
+			<div class="tile span3 youtube bg-brown"></div>
+			<div class="tile span3 facebook bg-blue"></div>
+			<div class="tile span3 code bg-magenta"></div>
+			<div class="tile span3 linkedin bg-teal"></div>
+		</div>
 		<div class="span24">
-			<h1>Responsive</h1>
+			<h1>Bilder</h1>
 		</div>
 		<div class="span12">
-			<h2>VarfÃ¶r?</h2>
-			<p class="blue">Coolt!</p>
-			<p class="blue">DemovÃ¤nligt!</p>
-			<p class="blue">semi-gemensam kodbas!</p>
-			<p class="blue">TjÃ¤nar utvecklingstid!</p>
-			<p class="blue">Snabbt enhetsanpassa befintlig sida.</p>
+			<h2>Sprites</h2>
+			<p class="blue">Samla flera bilder i en fil.</p>
+			<p class="blue">Lämpligt för ikoner.</p>
+			<h3>Varför?</h3>
+			<p class="blue">En request istället för X.</p>
+			<p class="blue">Sparar bandbredd.</p>
+			<h3>Nackdelar?</h3>
+			<p class="red">Kanske inte behöver alla bilder?</p>
 		</div>
-		<div class="span12">
-			<h2>Hur?</h2>
-			<p class="blue">Vad Ã¤r media-queries?</p>
-			<p class="blue">Speciella layouter? (vilken typ av sida Ã¤r det)</p>
-			<p class="blue">Vad Ã¤r faktiskt vitalt? (mobile/content first)</p>
+		<div class="container span12">
+			<h3 class="span12">Bilder</h3>
+			<div class="span4">
+				<h4>Large</h4>
+				<div class="bg-purple imagedisplay" style="background-image:url('../metrowebui/images/icons/tiles-large.png');"></div>
+			</div>
+			<div class="span4">
+				<h4>Desktop</h4>
+				<div class="bg-blue imagedisplay" style="background-image:url('../metrowebui/images/icons/tiles.png');"></div>
+			</div>
+			<div class="span4">
+				<h4>Tablet</h4>
+				<div class="bg-red imagedisplay" style="background-image:url('../metrowebui/images/icons/tiles-tablet.png');"></div>
+			</div>
 		</div>
 	</div>
 
