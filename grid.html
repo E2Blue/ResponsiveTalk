@@ -255,7 +255,28 @@
 			</div>
 			<div class="span20">
 				<h2 id="transform">Transforming spans</h2>
-				<p class="blue">Lösning på den coola effekten när layoutelement byter plats.</p>
+				<p class="blue">Enkel och snygg lösning på den coola effekten när layoutelement byter plats.</p>
+				<p class="green">Full semantik</p>
+				<h3>Hur?</h3>
+				<p class="blue">span*-widthname som innehåller bredden på önskat span.</p>
+				<p class="blue">Best practice, tablet och large</p>
+				<p class="blue">Aldrig span*-desktop</p>
+				<h3>Kod</h3>
+				<pre class="prettyprint">
+@media (min-width:1200px)
+{
+	.container > .span20-tablet {
+		width: 976px;
+	}
+}
+
+@media (min-width:768px) and (max-width: 979px)
+{
+	.container > .span20-tablet {
+		width: 628px;
+	}
+}
+				</pre>
 			</div>
 			<div class="span20" style="height:300px"></div>
 		</div>
