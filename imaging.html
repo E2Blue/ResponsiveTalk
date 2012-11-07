@@ -18,6 +18,15 @@
 			background-position:center top;
 			height:1160px;
 		}
+
+		#spritebtn {
+			width:254px;
+			height:64px;
+			background:url('./images/btn-sprite.png');
+		}
+		#spritebtn:hover {
+			background-position: 0 -67px;
+		}
 	</style>
 </head>
 <body  onload="prettyPrint()">
@@ -50,11 +59,95 @@
 			<h2>Sprites</h2>
 			<p class="blue">Samla flera bilder i en fil.</p>
 			<p class="blue">Lämpligt för ikoner.</p>
-			<h3>Varför?</h3>
-			<p class="blue">En request istället för X.</p>
-			<p class="blue">Sparar bandbredd.</p>
+			<p class="blue">Knappar kan ha vanlig och hover bakgrund i samma sprite.</p>
+			<h3>Fördelar?</h3>
+			<p class="green">En request istället för X.</p>
+			<p class="green">Sparar bandbredd.</p>
+			<p class="green">Mycket enklare att göra responsiv.</p>
 			<h3>Nackdelar?</h3>
 			<p class="red">Kanske inte behöver alla bilder?</p>
+			<p class="red">Kräver lite mer tänk än att ha enkla bilder.</p>
+			<p class="red">Kan endast upprepas i en dimension.</p>
+			<h3>Hur?</h3>
+			<p class="blue">Ska de kunna upprepa sig?</p>
+			<p class="blue">Alla bilder i en fil med motsatt håll.</p>
+			<p class="blue">Vad är den största storleken?</p>
+			<p class="blue">Vilket hörn?</p>
+			<p class="blue">Som att lägga en kartong med ett fyrkantigt hål över spritesheetet.</p>
+			<p class="blue">Negativ offset, "flytta upp" bilden till hålet.</p>
+			<h3>Kod</h3>
+			<pre class="prettyprint">
+.microsoft,
+.wp,
+.facebook,
+.github,
+.twitter,
+.linkedin,
+.youtube,
+.desktop,
+.code {
+	background-image: url('../images/icons/tiles.png');
+	background-repeat: no-repeat;
+}
+
+.microsoft {background-position:0px 0px}
+.wp{background-position: 0px -128px;}
+.facebook{background-position:0px -256px;}
+.github{background-position:0px -384px;}
+.twitter{background-position:0px -512px;}
+.linkedin{background-position: 0px -640px;}
+.youtube{background-position: 0px -768px;}
+.desktop {background-position: 0px -896px;}
+.code {background-position: 0px -1024px;}
+			</pre>
+			<h4>Knapp</h4>
+			<div id="spritebtn"></div>
+			<pre class="prettyprint">
+#spritebtn {
+	width:254px;
+	height:64px;
+	background:url('./images/btn-sprite.png');
+}
+#spritebtn:hover {
+	background-position: 0 -67px;
+}
+			</pre>
+			<img src="./images/btn-sprite.png" />
+			<h3>Responsivifiera</h3>
+			<p class="blue">Enkelt att ändra en enda url istället för en per ikon.</p>
+			<p class="blue">Beror på att spritesen får samma utrymme trots att de är mindre.</p>
+			<pre class="prettyprint">
+@media (min-width:1200px)
+{
+	.microsoft,
+	.wp,
+	.facebook,
+	.github,
+	.twitter,
+	.linkedin,
+	.youtube,
+	.desktop,
+	.code {
+		background-image: url('../images/icons/tiles-large.png')
+	}
+}
+
+@media (min-width:768px) and (max-width: 979px)
+{
+
+	.microsoft,
+	.wp,
+	.facebook,
+	.github,
+	.twitter,
+	.linkedin,
+	.youtube,
+	.desktop,
+	.code {
+		background-image: url('../images/icons/tiles-tablet.png')
+	}
+}
+			</pre>
 		</div>
 		<div class="container span12">
 			<h3 class="span12">Bilder</h3>
@@ -71,6 +164,11 @@
 				<div class="bg-red imagedisplay" style="background-image:url('../metrowebui/images/icons/tiles-tablet.png');"></div>
 			</div>
 		</div>
+		<div class="span24">
+			<h2>Vanliga bilder</h2>
+			<p class="blue">Ett av de största problemen i responsiv design</p>
+		</div>
+		<div class="span24" style="height:250px"></div>
 	</div>
 
 	<script type="text/javascript" src="./script/prettify.js"></script>
