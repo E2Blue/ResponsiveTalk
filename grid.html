@@ -12,12 +12,52 @@
 		.green:before {content: "+ ";}
 		.red:before {content: "- ";}
 		.blue:before {content: "* ";}
+
+		#hero {background-image: url('./images/grid-desktop.png');background-position: -9px 0;height:150px; margin: 50px 71px;}
+
+		@media (min-width:1200px)
+		{
+			#hero
+			{
+				background-image: url('./images/grid-large.png');background-position: -12px 0;
+			}
+		}
+		@media (min-width:768px) and (max-width:979px)
+		{
+			#hero
+			{
+				background-image: url('./images/grid-tablet.png');background-position: -6px 0;
+				margin: 50px 70px;
+			}
+		}
+		@media(max-width: 768px)
+		{
+			#hero
+			{
+				display:none;
+			}
+		}
 	</style>
 </head>
 <body  onload="prettyPrint()">
 	<div class="container">
-		<div class="container span24">
-			<h1 class="span20 pre4">Grid</h1>			
+		<div class="span24">
+			<div class="navbar">
+				<a class="item" href="./css.html">CSS</a>
+				<a class="item" href="responsive.html">Responsive</a>
+				<a class="item active" href="./grid.html">Grid</a>
+				<a class="item" href="./imaging.html">Bilder</a>
+				<a class="item" href="./gridexample.html">Grid exempel</a>
+				<a class="item" href="./gridtransformexample.html">Transform exempel</a>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<div class="container span24 bg-blue" style="position:relative;height:250px;margin-bottom:40px;">
+			<div id="hero" class="span8"></div>
+			<div class="span12" style="position:relative;color:white;top:60px;">
+				<h1 style="font-size:4.2em;line-height:1em;margin-bottom:0;">Grid</h1>
+				<h3>Struktur är bra ibland</h3>
+			</div>
 		</div>
 		<div class="container span4">
 		<ul class="span4">
